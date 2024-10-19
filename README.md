@@ -1,6 +1,6 @@
 # NestJSMongoDownloader
 
-NestJSMongoDownloader é um sistema simples para fazer download de arquivos utilizando MongoDB, NestJS, Amazon S3 e Angular para o frontend.
+NestJSMongoDownloader é um sistema simples para fazer download de arquivos utilizando MongoDB, NestJS, Amazon S3 e Angular para o frontend..
 
 ## Índice
 
