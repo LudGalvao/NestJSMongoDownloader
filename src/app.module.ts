@@ -1,13 +1,15 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
+import { ArquivoController } from './controllers/arquivo.controller';
+import { ArquivoService } from './services/arquivo.service';
+import { ArquivoModule } from './modules/arquivo.module';
 
 @Module({
   imports: [ ConfigModule.forRoot(),
-             MongooseModule.forRoot(process.env.MONGO_URI)],
-  controllers: [AppController],
-  providers: [AppService],
+             MongooseModule.forRoot(process.env.MONGO_URI),
+             ArquivoModule],
+  controllers: [ArquivoController],
+  providers: [ArquivoService],
 })
 export class AppModule {}
