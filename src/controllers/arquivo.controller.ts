@@ -1,7 +1,8 @@
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBody, ApiTags } from '@nestjs/swagger';
 import { ArquivoService } from './../services/arquivo.service';
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { Arquivo } from 'src/schemas/arquivo.schema';
+import { CreateArquivoDto } from 'src/dto/create-arquivo.dto';
 
 @ApiTags('Arquivo')
 @Controller('Arquivo')
@@ -10,7 +11,8 @@ export class ArquivoController{
     constructor(private readonly arquivoService: ArquivoService){}
 
     @Post()
-    async create(@Body() data: any): Promise<Arquivo> {
+    @ApiBody({ type: CreateArquivoDto })
+    async create(@Body() data: CreateArquivoDto): Promise<Arquivo> {
         return this.arquivoService.create(data);
     }
 
