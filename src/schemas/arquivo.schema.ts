@@ -25,4 +25,4 @@ export class Arquivo extends Document {
 
 }
 
-export const ArquivoSchema = SchemaFactory.createForClass(File);
+export const ArquivoSchema = SchemaFactory.createForClass(Arquivo);
