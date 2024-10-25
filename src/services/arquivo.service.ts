@@ -1,6 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
+import { CreateArquivoDto } from "src/dto/create-arquivo.dto";
 import { Arquivo } from "src/schemas/arquivo.schema";
 
 
@@ -9,7 +10,7 @@ export class ArquivoService{
 
     constructor(@InjectModel(Arquivo.name) private arquivoModel: Model<Arquivo>){}
 
-    async create(data: any): Promise<Arquivo> {
+    async create(data: CreateArquivoDto): Promise<Arquivo> {
         const criarArquivo = new this.arquivoModel(data);
         return criarArquivo.save();
     }
